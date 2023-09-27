@@ -10,13 +10,13 @@ import java.util.List;
 public class NumberFrequencyCalculatorService {
 
     public void calculateNumberFrequency(List<Integer> inputNumbers) {
-        List<Integer> inputNumbersRange = getRangeFromInputMinMaxValues(inputNumbers);
+        List<Integer> inputNumbersRange = getRangeFromBetweenMinMaxValues(inputNumbers);
         List<Integer> inputNumbersFrequency =
                 getElementFrequencyFromTargetList(inputNumbersRange, inputNumbers);
         printElementsWithFrequencies(inputNumbersRange, inputNumbersFrequency);
     }
 
-    public static List<Integer> getRangeFromInputMinMaxValues(List<Integer> input) {
+    private List<Integer> getRangeFromBetweenMinMaxValues(List<Integer> input) {
         List<Integer> outputList = new ArrayList<>();
         for (Integer i = Collections.min(input); i <= Collections.max(input); i++) {
             outputList.add(i);
@@ -24,7 +24,7 @@ public class NumberFrequencyCalculatorService {
         return outputList;
     }
 
-    public static List<Integer> getElementFrequencyFromTargetList(
+    private List<Integer> getElementFrequencyFromTargetList(
             List<Integer> elementsToGetFrequencyOf,
             List<Integer> elementsToSearch
     ) {
@@ -41,7 +41,7 @@ public class NumberFrequencyCalculatorService {
         return elementFrequencies;
     }
 
-    public static void printElementsWithFrequencies(
+    private void printElementsWithFrequencies(
             List<Integer> elements,
             List<Integer> elementFrequency
     ) {

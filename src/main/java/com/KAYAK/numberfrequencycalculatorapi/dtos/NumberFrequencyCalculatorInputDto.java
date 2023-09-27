@@ -1,4 +1,4 @@
-package com.KAYAK.numberfrequencycalculatorapi.models;
+package com.KAYAK.numberfrequencycalculatorapi.dtos;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
