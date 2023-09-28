@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class NumberFrequencyCalculatorService {
 
-    public void calculateNumberFrequency(List<Integer> inputNumbers) {
+    public void calculateAndPrintNumberFrequency(List<Integer> inputNumbers) {
         List<Integer> inputNumbersRange = getRangeFromBetweenMinMaxValues(inputNumbers);
         List<Integer> inputNumbersFrequency =
                 getElementFrequencyFromTargetList(inputNumbersRange, inputNumbers);

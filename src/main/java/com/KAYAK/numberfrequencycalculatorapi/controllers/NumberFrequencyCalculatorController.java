@@ -8,8 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 import static com.KAYAK.numberfrequencycalculatorapi.NumberFrequencyCalculatorApiApplication.BASE_URL;
 
 @CrossOrigin
@@ -23,7 +21,7 @@ public class NumberFrequencyCalculatorController {
     @PostMapping()
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<String> calculateNumberFrequency(@RequestBody @Valid NumberFrequencyCalculatorInputDto input) {
-        numberFrequencyCalculatorService.calculateNumberFrequency(input.getData());
+        numberFrequencyCalculatorService.calculateAndPrintNumberFrequency(input.getData());
         return ResponseEntity.ok("Successful, check the API console!");
     }
 }

@@ -33,15 +33,18 @@ class NumberFrequencyCalculatorServiceTest {
     }
 
     @Test
-    void itShouldPrintAndCalculateNumberFrequency() {
-        List<Integer> input = Arrays.asList(1, 2, 2, 3);
-        underTest.calculateNumberFrequency(input);
+    void itShouldCalculateAndPrintNumberFrequency() {
+        List<Integer> input = Arrays.asList(1, 2, 2, 3, 5, 5, 6, 2, 1, 3, 10, 5, 5);
+        underTest.calculateAndPrintNumberFrequency(input);
 
         String expected = """
-                \s\s*  \s
-                * * *\s
-                1 2 3\s
+                        *           \s
+                  *     *           \s
+                * * *   *           \s
+                * * *   * *       * \s
+                1 2 3 4 5 6 7 8 9 10\s
                 """;
+
         assertThat(outContent.toString().replaceAll("\\r\\n", "\n")).isEqualTo(expected);
     }
 }
